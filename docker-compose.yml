@@ -1,5 +1,9 @@
 version: "3.7"
 
+networks:
+  caliwears_network:
+    driver: bridge
+
 services:
   kong:
     image: kong:latest
@@ -8,15 +12,11 @@ services:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /etc/kong/kong.yml
     volumes:
-      - ./kong.yml:/etc/kong/kong.yml
+      - ./config/kong.yml:/etc/kong/kong.yml
     ports:
       - "8000:8000"
       - "8443:8443"
       - "8001:8001"
       - "8444:8444"
     networks:
-      - kong-net
-
-networks:
-  kong-net:
-    driver: bridge
+      - caliwears_network
