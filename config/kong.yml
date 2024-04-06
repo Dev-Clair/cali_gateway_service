@@ -5,29 +5,29 @@ name: product_service
       paths:
         - /products
 
-# plugins:
-#   - name: cors
-#     config:
-#       origins:
-#         - '*'
-#       methods:
-#         - GET
-#         - POST
-#       headers:
-#         - Accept
-#         - Accept-Version
-#         - Content-Length
-#         - Content-MD5
-#         - Content-Type
-#         - Date
-#         - X-Auth-Token
-#       exposed_headers:
-#         - X-Auth-Token
-#       credentials: true
-#       max_age: 3600
+plugins:
+  - name: cors
+    config:
+      origins:
+        - '*'
+      methods:
+        - GET
+        - POST
+      headers:
+        - Accept
+        - Accept-Version
+        - Content-Length
+        - Content-MD5
+        - Content-Type
+        - Date
+        - X-Auth-Token
+      exposed_headers:
+        - X-Auth-Token
+      credentials: true
+      max_age: 3600
 
-  # - name: rate-limiting
-  #   config:
-  #     # second: 5
-  #     hour: 10
-  #     policy: local
+  - name: rate-limiting
+    config:
+      # second: 5
+      hour: 10
+      policy: local
