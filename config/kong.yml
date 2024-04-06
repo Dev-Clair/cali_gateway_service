@@ -1,8 +1,16 @@
+name: product_service
+url: http://127.0.0.1:8800
+routes:
+  -name: products
+    paths:
+      - /products
+
+
 plugins:
   - name: cors
     config:
       origins:
-        - http://127.0.0.1:8800
+        - '*'
       methods:
         - GET
         - POST

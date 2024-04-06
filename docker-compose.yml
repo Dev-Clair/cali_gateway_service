@@ -7,7 +7,7 @@ networks:
 services:
   kong:
     image: kong:latest
-    container_name: kong
+    container_name: caliwears_kong_api-gateway_service
     environment:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /etc/kong/kong.yml
@@ -16,7 +16,7 @@ services:
     ports:
       - "8000:8000"
       - "8443:8443"
-      - "8001:8001"
-      - "8444:8444"
+      - "127.0.0.1:8001:8001/tcp"
+      - "127.0.0.1:8444:8444/tcp"
     networks:
       - caliwears_network
