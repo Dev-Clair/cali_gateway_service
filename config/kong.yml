@@ -15,7 +15,7 @@ services:
         strip_path: true
   - name: cali_inventory_service
     host: host.docker.internal
-    port: 8800
+    port: 8080
     path: /api/inventories
     routes:
       - name: inventory_resource_endpoint
