@@ -4,18 +4,18 @@ _transform: true
 services:
   - name: cali_product_service
     host: host.docker.internal
-    port: 8800
+    port: 8080
     path: /api/products
     routes:
       - name: product_resource_endpoint
         methods:
           - GET
         paths:
-          - /producs
+          - /products
         strip_path: true
   - name: cali_inventory_service
     host: host.docker.internal
-    port: 8080
+    port: 8800
     path: /api/inventories
     routes:
       - name: inventory_resource_endpoint
@@ -23,7 +23,7 @@ services:
           - GET
           - POST
         paths:
-          - /inventories
+          - /inventory
         strip_path: true
 
 plugins:
