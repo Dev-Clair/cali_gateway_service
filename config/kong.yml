@@ -5,7 +5,7 @@ services:
   - name: cali_product_service
     host: host.docker.internal
     port: 3999
-    path: /api/products
+    path: /api/v1/products
     routes:
       - name: product_resource_endpoint
         methods:
