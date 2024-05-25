@@ -27,15 +27,3 @@ services:
       - "127.0.0.1:8444:8444/tcp"
     networks:
       - caliwears_network
-
-  rabbitmq:
-    image: rabbitmq:3.13.1-management-alpine
-    container_name: "caliwears_message_broker"
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    volumes:
-      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-    networks:
-      - caliwears_network
